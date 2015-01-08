@@ -6,3 +6,55 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+#cards .card {
+  padding: 3px;
+  border: 1px solid gray;
+  margin: 0 0 10px 0;
+}
+
+#cards .card h2,h3,h4 {
+margin: 0;
+padding: 3px 0 2px 0;
+}
+
+#cards .card .detail {
+  margin: 1em;
+}
+
+#cards .card .dates {
+  padding-left: 16px;
+  font-size: 0.8em;
+  color: gray;
+  width: 240px;
+  float:left;
+}
+#cards .card .images {
+  margin-left: 242px;
+}
+
+
+
+#cards .card .description {
+  margin-left: 1em;
+}
+
+#cards .card .checklists {
+  margin-left: 1em;
+}
+
+
+#cards .card .checklists ul {
+  list-style-type: none;
+margin: 0;
+padding: 0;
+}
+#cards .card .checklists .completed {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.clearfix {
+clear:both;
+}

@@ -13,5 +13,8 @@
     "serve-favicon": "~2.2.0",
     "debug": "~2.1.1",
     "ejs": "~1.0.0"
+  },
+  "devDependencies": {
+    "node-trello": "^1.0.1"
   }
 }

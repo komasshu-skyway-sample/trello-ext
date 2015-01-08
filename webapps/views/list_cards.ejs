@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <a href="/lists">リスト一覧に戻る</a>
+    <div id="cards">
+      <% cards.forEach(function(card) { %>
+        <div class="card">
+        <h2><a href="<%= card.url %>" target="_blank"><%= card.name %></a></h2>
+        <div class="detail">
+
+          <div class="dates">
+            <span class="due">締め切り：<%= card.due %></span><br>
+            <span class="dateLastActivity">最終更新：<%= card.dateLastActivity %>
+          </div>
+          <div class="images">
+          <% card.members.forEach(function(member){ %>
+            <img src="https://trello-avatars.s3.amazonaws.com/<%= member.avatarHash %>/30.png">
+          <% }); %>
+          </div>
+          <div class="clearfix"></div>
+        <h3>description</h3>
+        <div class="description"><pre><%= card.desc %></pre></div>
+        <h3>checklists</h3>
+          <div class="checklists">
+          <% card.checklists.forEach(function(checklist) { %>
+          <h4><%= checklist.name %></h4>
+          <div class="checklist">
+          <ul>
+            <% checklist.checkItems.forEach(function(item) { %>
+            <li>
+              <% if (item.state === "complete") { %>
+                <input type="checkbox" checked onclick="return false;"> <span class="itemname completed"><%= item.name %></span>
+              <% } else { %>
+                <input type="checkbox" onclick="return false;"> <span class="itemname"><%= item.name %></span>
+              <% } %>
+            </li>
+            <% }); %>
+          </ul>
+          </div><!-- checklist -->
+          <% }); %>
+          </div><!-- checklists -->
+          </div><!-- detail -->
+
+        </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
